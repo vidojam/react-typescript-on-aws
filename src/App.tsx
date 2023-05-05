@@ -4,12 +4,12 @@ import { Hello } from './components/Hello';
 import { Form } from './components/Form'
 
 function App() {
-  const[sever, setServerData] = React.useState([])
+  const[serverData, setServerData] = React.useState([])
 
   React.useEffect(()=> {
-    fetch('http://18.212.62.122:4000')
+    fetch('http://18.212.62.122:4000/')
     .then(res => res.json())
-    .then(data => console.log())
+    .then(data => setServerData(data))
     .catch(err => console.error(err))
   }, [])
 
